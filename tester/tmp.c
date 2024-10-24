@@ -8,5 +8,8 @@ int	main(void)
 
 	std = printf("%p\n", (void *)ptr);
 	printf("%d\n", std);
+
+	// std = printf("%");
+	// printf("\n%d\n", std);
 	return (0);
 }

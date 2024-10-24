@@ -4,7 +4,7 @@ HDRS       = ft_printf.h
 SRCS       = tester.c ../ft_printf.c ../ft_print_char.c ../ft_print_number.c ../ft_print_pointer.c ../ft_putnbr.c
 OBJS       = $(SRCS:.c=.o)
 
-BONUS_SRCS =
+BONUS_SRCS = ../ft_print_char_bonus.c ../ft_print_decimal_bonus.c ../ft_print_hexadecimal_bonus.c ../ft_print_pointer_bonus.c ../ft_printf_bonus.c ../ft_putnbr_bonus.c ../ft_store_func_bonus.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 CC         = gcc
@@ -28,7 +28,7 @@ bonus:
 	@$(MAKE) WITH_BONUS=1
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
@@ -36,6 +36,10 @@ fclean: clean
 re: fclean all
 
 test: $(NAME)
+	@./$(NAME)
+	@$(MAKE) fclean
+
+bonustest: bonus
 	@./$(NAME)
 	@$(MAKE) fclean
 

@@ -6,7 +6,7 @@
 /*   By: mizusato <mizusato@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:59:04 by mizusato          #+#    #+#             */
-/*   Updated: 2024/08/20 20:59:14 by mizusato         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:48:08 by mizusato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ int	ft_print_pointer_bonus(t_flag *s, va_list *ap)
 	int					len;
 
 	n = (unsigned long long)va_arg(*ap, void *);
+	if (n == 0)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	write(1, "0x", 2);
 	len = ft_count_pointer_len(n);
 	len = ft_put_pointer(s, n, len);

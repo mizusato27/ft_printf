@@ -19,10 +19,10 @@ static int	ft_compare_results(int n1, int n2, int n3)
 {
 	if (n1 == n2)
 	{
-		printf("\n-- %d.%sOK%s --\n\n", n3, YELLOW, RESET);
+		printf("\n-- %d.%sOK%s (%d) --\n\n", n3, YELLOW, RESET, n1);
 		return (1);
 	}
-	printf("\n-- %d.%sKO%s %d, %d --\n\n", n3, RED, RESET, n1, n2);
+	printf("\n-- %d.%sKO%s (%d, %d) --\n\n", n3, RED, RESET, n1, n2);
 	return (0);
 }
 
@@ -36,17 +36,19 @@ int	main(void)
 	printf("\n--------------- printf test ---------------\n\n");
 
 	printf("[only %%]\n");
+	// custom = printf("%");
+	// printf("\n%d\n", custom);
 	custom = ft_printf("%");
 	printf("\n%d\n\n", custom);
 
 	int	*ptr1 = NULL;
-	// printf("[*ptr == NULL]\n");
-	// total++;
-	// printf("std:\n");
-	// std = printf("%p", ptr1);
-	// printf("\ncustom:\n");
-	// custom = ft_printf("%p", ptr1);
-	// success += ft_compare_results(std, custom, total);
+	printf("[*ptr == NULL]\n");
+	total++;
+	printf("std:\n");
+	std = printf("%p", ptr1);
+	printf("\ncustom:\n");
+	custom = ft_printf("%p", ptr1);
+	success += ft_compare_results(std, custom, total);
 
 	int	num = 42;
 	ptr1 = &num;

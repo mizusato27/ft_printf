@@ -6,7 +6,7 @@
 /*   By: mizusato <mizusato@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:41:28 by mizusato          #+#    #+#             */
-/*   Updated: 2024/08/20 20:41:32 by mizusato         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:20:57 by mizusato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	ft_putnbr_hexa_bonus_fd(t_flag *s, unsigned int n, int fd)
 	if (s->specifier == 2)
 	{
 		if (n > 15)
-			ft_putnbr_hexa_fd(s, (n / 16), fd);
+			ft_putnbr_hexa_bonus_fd(s, (n / 16), fd);
 		write(fd, &"0123456789abcdef"[n % 16], 1);
 	}
 	else if (s->specifier == 3)
 	{
 		if (n > 15)
-			ft_putnbr_hexa_fd(s, (n / 16), fd);
+			ft_putnbr_hexa_bonus_fd(s, (n / 16), fd);
 		write(fd, &"0123456789ABCDEF"[n % 16], 1);
 	}
 }

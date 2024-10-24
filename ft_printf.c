@@ -6,11 +6,14 @@
 /*   By: mizusato <mizusato@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:25:01 by mizusato          #+#    #+#             */
-/*   Updated: 2024/08/20 20:34:51 by mizusato         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:01:46 by mizusato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#ifdef BONUS
+# include "ft_printf_bonus.h"
+#endif
 
 int	ft_print_str(const char **fmt)
 {
@@ -122,9 +125,3 @@ int	ft_printf(const char *fmt, ...)
 }
 
 #endif
-
-// #include <stdio.h>
-// int	main(void)
-// {
-
-// }
